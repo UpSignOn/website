@@ -166,7 +166,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             <tr>
               <td colSpan={3}>
                 <Link
-                  href="https://github.com/UpSignOn/UpSignOn-pro-server/blob/production/doc/GPO_deployment.md"
+                  href="https://github.com/rgsystemes/upsignon-pro-server/blob/production/doc/GPO_deployment.md"
                   target="_blank"
                 >
                   {t.downloads.extensionGPO}

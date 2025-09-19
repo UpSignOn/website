@@ -3,11 +3,7 @@ import { getDictionary } from "../../../../translations/translations";
 import styles from "../page.module.css";
 import { Metadata } from "next";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ lang: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   const t = getDictionary(lang);
   return {
@@ -23,38 +19,25 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ lang: string }>;
-}) {
+export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const t = getDictionary(lang);
 
   return (
     <div className={styles.article}>
       <h1>{t.resources.technicalExplanations}</h1>
-      <Link
-        className={styles.techArticle}
-        href="/resources/tech-articles/pro-vs-perso"
-      >
+      <Link className={styles.techArticle} href="/resources/tech-articles/pro-vs-perso">
         {t.resources.generalDesignPrinciples}
       </Link>
-      <Link
-        className={styles.techArticle}
-        href="/resources/tech-articles/browser-extension-security"
-      >
+      <Link className={styles.techArticle} href="/resources/tech-articles/browser-extension-security">
         {t.resources.browserExtensionSecurity}
       </Link>
-      <Link
-        className={styles.techArticle}
-        href="/resources/tech-articles/protected-clipboard-behaviour"
-      >
+      <Link className={styles.techArticle} href="/resources/tech-articles/protected-clipboard-behaviour">
         {t.techResources.protectedClipboardBehaviour.title}
       </Link>
       <Link
         className={styles.techArticle}
-        href="https://github.com/UpSignOn/UpSignOn-pro-server/blob/production/doc/Install.md"
+        href="https://github.com/rgsystemes/upsignon-pro-server/blob/production/doc/Install.md"
         target="_blank"
       >
         {t.resources.onPremDoc}
